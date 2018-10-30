@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>iframe amb colors aleatoris</title>
+  <style>
+    iframe {
+      width: 500px;
+      height: 500px;
+      border: #000000 0px dotted;
+      background-color: red;
+    }
+  </style>
+  <script>
+    function carregar_frame() {
+      var color;
+
+      setInterval(function() {
+        color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+        console.log(color);
+        window.frames[0].document.body.style.background = color;
+      }, 1000);
+    }
+  </script>
+</head>
+
+<body onload="carregar_frame()">
+  <iframe></iframe>
+</body>
+
+</html>
